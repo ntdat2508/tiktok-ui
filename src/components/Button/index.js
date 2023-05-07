@@ -8,6 +8,7 @@ function Button({
   to,
   href,
   primary = false,
+  simple = false,
   outline = false,
   text = false,
   rounded = false,
@@ -48,6 +49,7 @@ function Button({
   const classes = cx('wrapper', {
     [className]: className,
     primary,
+    simple,
     outline,
     text,
     disabled,
