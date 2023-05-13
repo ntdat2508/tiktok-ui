@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 
-import * as searchService from '~/apiService/searchService';
+import * as searchService from '~/services/searchService';
 import AccountItem from '~/components/AccountItem';
-import { Wrapper as PropperWrapper } from '~/components/Popper';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SearchIcon } from '~/components/Icons';
@@ -66,12 +66,12 @@ function Search() {
                 visible={showResult && searchResult.length > 0}
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <PropperWrapper>
-                            <h4 className={cx('search-title')}>Accoutns</h4>
+                        <PopperWrapper>
+                            <h4 className={cx('search-title')}>Accounts</h4>
                             {searchResult.map((result) => (
                                 <AccountItem key={result.id} data={result} />
                             ))}
-                        </PropperWrapper>
+                        </PopperWrapper>
                     </div>
                 )}
                 onClickOutside={handleShowResult}
